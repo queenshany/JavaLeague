@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="513.0" prefWidth="614.0" spacing="10.0" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminTeamController">
+	<children>
+		<HBox>
+			<children>
+				<Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Back">
+					<graphic>
+						<ImageView fitHeight="15" fitWidth="15">
+							<Image url="@/resources/icon-back.png" />
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets left="10.0" />
+					</opaqueInsets>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+				<Region HBox.hgrow="ALWAYS">
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Region>
+				<Button fx:id="logoutButton" alignment="CENTER" mnemonicParsing="false" onAction="#logOut" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Logout">
+					<graphic>
+						<ImageView fitHeight="10" fitWidth="10">
+							<image>
+								<Image url="@/resources/icon-sign-out.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+			</children>
+			<VBox.margin>
+				<Insets left="15.0" right="15.0" />
+			</VBox.margin>
+		</HBox>
+		<TabPane tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="Teams DataBase">
+					<content>
+						<VBox alignment="TOP_CENTER" spacing="15.0">
+							<children>
+								<TableView fx:id="tableTeam" onMouseClicked="#tableOnClick" prefHeight="360.0" prefWidth="567.0">
+									<columns>
+										<TableColumn fx:id="teamIdColumn" prefWidth="93.0" text="ID" />
+										<TableColumn fx:id="teamNameColumn" prefWidth="94.0" text="Name" />
+										<TableColumn fx:id="teamLvlColumn" prefWidth="93.0" text="Level" />
+										<TableColumn fx:id="teamStadiumColumn" prefWidth="77.0" text="Stadium" />
+										<TableColumn fx:id="teamCoachColumn" prefWidth="109.0" text="Coach" />
+										<TableColumn fx:id="teamValueColumn" prefWidth="92.0" text="Value" />
+									</columns>
+								</TableView>
+								<FlowPane alignment="CENTER_LEFT">
+									<children>
+										<Button fx:id="addTeamButton" mnemonicParsing="false" onAction="#createTeam" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Add Team" />
+									</children>
+								</FlowPane>
+								<FlowPane alignment="CENTER" hgap="15.0">
+									<children>
+										<Label text="Pick a team from the table to do the following actions:">
+											<font>
+												<Font name="System Bold" size="12.0" />
+											</font>
+										</Label>
+										<Button fx:id="updateTeamButton" disable="true" mnemonicParsing="false" onAction="#updateTeam" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Team Details" />
+										<Button fx:id="removeTeamButton" disable="true" mnemonicParsing="false" onAction="#removeTeam" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Remove Team" />
+									</children>
+								</FlowPane>
+							</children>
+							<padding>
+								<Insets bottom="15.0" left="15.0" right="15.0" top="10.0" />
+							</padding>
+						</VBox>
+					</content>
+				</Tab>
+				<Tab text="General Queries">
+					<content>
+						<ScrollPane fitToWidth="true">
+							<content>
+								<VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-background-color: transparent;">
+									<children>
+										<Label alignment="CENTER" text="All Super PlayMakers (All Teams)">
+											<font>
+												<Font name="System Bold" size="12.0" />
+											</font>
+										</Label>
+										<TableView fx:id="tableSuperPlayers" prefHeight="195.0" prefWidth="547.0">
+											<columns>
+												<TableColumn fx:id="idColumnSuperPlayer" prefWidth="53.0" text="ID" />
+												<TableColumn fx:id="firstNameColumnSuperPlayer" prefWidth="118.0" text="First Name" />
+												<TableColumn fx:id="lastNameColumnSuperPlayer" prefWidth="92.0" text="Last Name" />
+												<TableColumn fx:id="positionColumnSuperPlayer" prefWidth="79.0" text="Position" />
+												<TableColumn fx:id="rightLegColumnSuperPlayer" prefWidth="93.33331298828125" text="Right Footed" />
+												<TableColumn fx:id="valueColumnSuperPlayer" maxWidth="206.0" minWidth="-1.0" prefWidth="109.0" text="Value" />
+											</columns>
+										</TableView>
+										<HBox alignment="CENTER" spacing="10.0">
+											<children>
+												<Label alignment="CENTER" text="First Players of Best Home Team">
+													<font>
+														<Font name="System Bold" size="12.0" />
+													</font>
+												</Label>
+												<TextField fx:id="bestTeamText" editable="false" />
+												<Label alignment="CENTER" layoutX="109.0" layoutY="14.0" text=":">
+													<font>
+														<Font name="System Bold" size="12.0" />
+													</font>
+												</Label>
+											</children>
+										</HBox>
+										<TableView fx:id="tablePlayer" layoutX="20.0" layoutY="82.0" prefHeight="195.0">
+											<columns>
+												<TableColumn fx:id="idColumnPlayer" prefWidth="53.0" text="ID" />
+												<TableColumn fx:id="firstNameColumnPlayer" prefWidth="118.0" text="First Name" />
+												<TableColumn fx:id="lastNameColumnPlayer" prefWidth="92.0" text="Last Name" />
+												<TableColumn fx:id="positionColumnPlayer" prefWidth="79.0" text="Position" />
+												<TableColumn fx:id="rightLegColumnPlayer" prefWidth="93.33331298828125" text="Right Footed" />
+												<TableColumn fx:id="valueColumnPlayer" maxWidth="206.0" minWidth="-1.0" prefWidth="109.0" text="Value" />
+											</columns>
+										</TableView>
+										<Label alignment="CENTER" text="Team With Largest Home Crowd ">
+											<font>
+												<Font name="System Bold" size="12.0" />
+											</font>
+										</Label>
+										<TextField fx:id="textCrowd" alignment="CENTER" editable="false" />
+										<Label alignment="CENTER" text="Most Favorite Team">
+											<font>
+												<Font name="System Bold" size="12.0" />
+											</font>
+										</Label>
+										<TextField fx:id="textFavourite" alignment="CENTER" editable="false" />
+									</children>
+								</VBox>
+							</content>
+							<padding>
+								<Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+							</padding>
+						</ScrollPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
+	<padding>
+		<Insets top="15.0" />
+	</padding>
+</VBox>

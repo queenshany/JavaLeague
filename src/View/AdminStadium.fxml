@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="929.0" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminStadiumController">
+	<bottom>
+		<HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="addStdBut" mnemonicParsing="false" onAction="#addStadium" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Add Stadium">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+            <Button fx:id="updateStdBut" disable="true" mnemonicParsing="false" onAction="#updateStadium" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Update Stadium" />
+				<Button fx:id="removeStdBut" disable="true" mnemonicParsing="false" onAction="#removeStadium" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Remove Stadium">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+				<ComboBox fx:id="comboRecp" disable="true" promptText="Choose Receptionist">
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</ComboBox>
+				<Button fx:id="addRecp" disable="true" mnemonicParsing="false" onAction="#addRec" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Add Receptionist">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+				<Button fx:id="removeStdRecp" disable="true" mnemonicParsing="false" onAction="#removeRec" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Remove Receptionist">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+			</children>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+         <padding>
+            <Insets left="5.0" top="10.0" />
+         </padding>
+		</HBox>
+	</bottom>
+	<top>
+		<HBox fx:id="pane" BorderPane.alignment="CENTER">
+			<children>
+<Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Back">
+					<graphic>
+						<ImageView fitHeight="15" fitWidth="15">
+							<Image url="@/resources/icon-back.png" />
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets left="10.0" />
+					</opaqueInsets>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+				<Region HBox.hgrow="ALWAYS">
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Region>
+				<Button fx:id="logoutButton" alignment="CENTER" mnemonicParsing="false" onAction="#logOut" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Logout">
+					<graphic>
+						<ImageView fitHeight="10" fitWidth="10">
+							<Image url="@/resources/icon-sign-out.png" />
+						</ImageView>
+					</graphic>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+			</children>
+			<BorderPane.margin>
+				<Insets bottom="10.0" />
+			</BorderPane.margin>
+		</HBox>
+	</top>
+	<center>
+		<SplitPane dividerPositions="0.6299093655589124" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+			<items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+      				<TableView fx:id="table" onMouseClicked="#updateList" prefHeight="335.0" prefWidth="437.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      					<columns>
+      						<TableColumn fx:id="idColumn" prefWidth="51.666656494140625" text="ID" />
+      						<TableColumn fx:id="nameColumn" prefWidth="89.33334350585938" text="Name" />
+      						<TableColumn fx:id="addressColumn" prefWidth="165.6666259765625" text="Address" />
+      						<TableColumn fx:id="capacityColumn" prefWidth="105.3333740234375" text="Capacity" />
+      					</columns>
+      					<opaqueInsets>
+      						<Insets />
+      					</opaqueInsets>
+      				</TableView>
+               </children>
+            </AnchorPane>
+				<VBox style="-fx-background-color: transparent;">
+					<children>
+						<Accordion fx:id="accord" disable="true" style="-fx-background-color: transparent;">
+							<panes>
+								<TitledPane animated="false" text="Stadium's Receptionists">
+									<content>
+										<AnchorPane>
+											<children>
+												<ListView fx:id="recList" editable="true" onMouseClicked="#enableButtonsOnListClick" prefHeight="331.0" prefWidth="262.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+											</children>
+											<padding>
+												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+											</padding>
+										</AnchorPane>
+									</content>
+								</TitledPane>
+								<TitledPane animated="false" text="Stadium's Matches">
+									<content>
+										<AnchorPane>
+											<children>
+												<ListView fx:id="matchList" editable="true" prefHeight="331.0" prefWidth="262.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+											</children>
+											<padding>
+												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+											</padding>
+										</AnchorPane>
+									</content>
+								</TitledPane>
+								<TitledPane animated="false" text="Stadium's Teams">
+									<content>
+										<AnchorPane>
+											<children>
+												<ListView fx:id="teamList" editable="true" prefHeight="331.0" prefWidth="262.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+											</children>
+											<padding>
+												<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+											</padding>
+										</AnchorPane>
+									</content>
+								</TitledPane>
+								<TitledPane animated="false" layoutX="10.0" layoutY="60.0" text="Stadium's Most Active City">
+									<content>
+										<AnchorPane>
+											<padding>
+												<Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+											</padding>
+											<children>
+												<TextField fx:id="activeCityText" alignment="CENTER" editable="false" prefHeight="29.0" prefWidth="240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+											</children>
+										</AnchorPane>
+									</content>
+								</TitledPane>
+							</panes>
+						</Accordion>
+					</children>
+				</VBox>
+			</items>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+		</SplitPane>
+	</center>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</BorderPane>

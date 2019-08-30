@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vboxPane" alignment="TOP_CENTER" prefHeight="270.0" prefWidth="500.0" spacing="10.0" stylesheets="@FormDesign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminTeamCreationController">
+	<children>
+		<Label alignment="CENTER" contentDisplay="CENTER" text="Add Team Form">
+			<font>
+				<Font name="System Bold" size="14.0" />
+			</font>
+		</Label>
+		<Separator prefHeight="0.0" prefWidth="674.0">
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+			<VBox.margin>
+				<Insets />
+			</VBox.margin>
+		</Separator>
+		<HBox alignment="CENTER">
+			<children>
+				<Label fx:id="alertLabel" textFill="RED">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Label>
+			</children>
+		</HBox>
+		<GridPane hgap="20.0" vgap="10.0">
+			<columnConstraints>
+				<ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="75.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+				<ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="70.0" />
+				<ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="150.0" minWidth="159.3333740234375" prefWidth="150.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label alignment="CENTER" contentDisplay="CENTER" text="ID">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="idText" prefHeight="25.0" prefWidth="144.0" promptText="Enter ID" GridPane.columnIndex="1" />
+				<Label text="Name" GridPane.rowIndex="1">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="nameText" prefHeight="25.0" prefWidth="112.0" promptText="Enter Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label text="Stadium" GridPane.columnIndex="2" GridPane.rowIndex="2">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+					<GridPane.margin>
+						<Insets />
+					</GridPane.margin>
+				</Label>
+				<Label text="Level" GridPane.rowIndex="2">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<ComboBox fx:id="comboLevel" prefHeight="25.0" prefWidth="133.0" promptText="Choose Level" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<Label text="Value" GridPane.columnIndex="2" GridPane.rowIndex="1">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="valueTextField" prefHeight="25.0" prefWidth="179.0" promptText="Enter Value" GridPane.columnIndex="3" GridPane.rowIndex="1">
+					<GridPane.margin>
+						<Insets />
+					</GridPane.margin>
+				</TextField>
+				<ComboBox fx:id="comboStadium" prefHeight="25.0" prefWidth="158.0" promptText="Choose Stadium" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+			</children>
+			<VBox.margin>
+				<Insets />
+			</VBox.margin>
+		</GridPane>
+		<HBox alignment="CENTER">
+			<children>
+				<Region HBox.hgrow="ALWAYS" />
+				<Button fx:id="submitButton" mnemonicParsing="false" onAction="#submit" onMouseEntered="#buttonOnMouseEntered" onMouseExited="#buttonOnMouseExited" prefHeight="25.0" prefWidth="110.0" text="Submit">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+			</children>
+			<VBox.margin>
+				<Insets top="7.0" />
+			</VBox.margin>
+		</HBox>
+	</children>
+	<padding>
+		<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+	</padding>
+</VBox>

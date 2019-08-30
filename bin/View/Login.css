@@ -1,0 +1,14 @@
+.label {
+	-fx-effect: dropshadow( one-pass-box , black , 4 , 0.5 , 0 , 0 );
+}
+
+.button {
+	-fx-background-color: white;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+	-fx-border-color: black;
+	-fx-border-width: 1.25;
+	-fx-border-radius: 9;
+	-fx-effect: dropshadow(one-pass-box, black, 9, 0.0, 4, 0);
+}

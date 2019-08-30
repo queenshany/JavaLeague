@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="pane" alignment="TOP_CENTER" spacing="10.0" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminMatchController">
+	<children>
+		<HBox alignment="CENTER">
+			<children>
+				<Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" onMouseDragEntered="#buttOnMouseEntered" onMouseDragExited="#buttOnMouseExited" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Back">
+					<graphic>
+						<ImageView fitHeight="15" fitWidth="15">
+							<Image url="@/resources/icon-back.png" />
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets left="10.0" />
+					</opaqueInsets>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+				<Region HBox.hgrow="ALWAYS">
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</Region>
+				<Button fx:id="logoutButton" alignment="CENTER" mnemonicParsing="false" onAction="#logOut" onMouseDragEntered="#buttOnMouseEntered" onMouseDragExited="#buttOnMouseExited" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Logout">
+					<graphic>
+						<ImageView fx:id="logOut" fitHeight="10" fitWidth="10">
+							<Image url="@/resources/icon-sign-out.png" />
+						</ImageView>
+					</graphic>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+			</children>
+			<VBox.margin>
+				<Insets />
+			</VBox.margin>
+		</HBox>
+		<TableView fx:id="tableMatch" onMouseClicked="#updateFanTable" prefHeight="236.0" prefWidth="759.0">
+			<columns>
+				<TableColumn fx:id="idColumn" prefWidth="55.0" text="ID" />
+				<TableColumn fx:id="hTeamColumn" prefWidth="75.0" text="Home Team" />
+				<TableColumn fx:id="hTeamScoreColumn" prefWidth="114.0" text="Home Team Score" />
+				<TableColumn fx:id="aTeamColumn" prefWidth="74.0" text="Away Team" />
+				<TableColumn fx:id="aTeamScore" prefWidth="114.0" text="Away Team Score" />
+				<TableColumn fx:id="matchLvlColumn" prefWidth="48.0" text="Level" />
+				<TableColumn fx:id="dateColumn" prefWidth="105.0" text="Start Date Time" />
+				<TableColumn fx:id="durationColumn" minWidth="0.0" prefWidth="77.0" text="Duration" />
+				<TableColumn fx:id="extraColumn" prefWidth="95.0" text="Extra Time" />
+			</columns>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</TableView>
+		<HBox alignment="CENTER_RIGHT" spacing="10.0">
+			<children>
+				<Label fx:id="alertLabel" prefHeight="17.0" prefWidth="173.0" />
+				<Button fx:id="addMatchButton" mnemonicParsing="false" onAction="#addMatch" onMouseDragEntered="#buttOnMouseEntered" onMouseDragExited="#buttOnMouseExited" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Add Match" />
+				<Button fx:id="updateButton" disable="true" mnemonicParsing="false" onAction="#updateMatch" onMouseDragEntered="#buttOnMouseEntered" onMouseDragExited="#buttOnMouseExited" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Update Match" />
+				<Button fx:id="removeMatchButton" contentDisplay="BOTTOM" disable="true" mnemonicParsing="false" onAction="#removeMatch" onMouseDragEntered="#buttOnMouseEntered" onMouseDragExited="#buttOnMouseExited" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Remove Match" />
+			</children>
+			<VBox.margin>
+				<Insets />
+			</VBox.margin>
+			<padding>
+				<Insets left="10.0" right="10.0" />
+			</padding>
+		</HBox>
+		<Separator prefWidth="200.0" />
+		<Label text="Crowd of Selected Match">
+			<VBox.margin>
+				<Insets bottom="2.0" top="2.0" />
+			</VBox.margin>
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+		</Label>
+		<TableView fx:id="fanTable" prefHeight="182.0" prefWidth="759.0">
+			<columns>
+				<TableColumn fx:id="idFanColumn" prefWidth="127.0" text="ID" />
+				<TableColumn fx:id="firstNameColumn" prefWidth="167.0" text="First Name" />
+				<TableColumn fx:id="lastNameColumn" prefWidth="155.0" text="Last Name " />
+				<TableColumn fx:id="fanLevelColumn" prefWidth="119.0" text="Level" />
+				<TableColumn fx:id="hTeamFanColumn" prefWidth="214.0" text="Favorite Team" />
+			</columns>
+		</TableView>
+	</children>
+	<padding>
+		<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+	</padding>
+</VBox>

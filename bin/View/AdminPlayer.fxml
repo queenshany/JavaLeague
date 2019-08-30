@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="865.0" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AdminPlayerController">
+	<center>
+		<TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="TOP_CENTER">
+			<tabs>
+				<Tab fx:id="systemPlayersTab" text="Players DataBase">
+					<content>
+						<BorderPane prefHeight="415.0" prefWidth="656.0">
+							<center>
+								<TableView fx:id="playersTable" onMouseClicked="#tableOnClick" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
+									<columns>
+										<TableColumn fx:id="playerIdColumn" prefWidth="40.0" text="ID" />
+										<TableColumn fx:id="playerFirstNameColumn" prefWidth="72.33334350585938" text="First Name" />
+										<TableColumn fx:id="playersLastNameColumn" prefWidth="67.0" text="Last Name" />
+										<TableColumn fx:id="playerPositonColumn" prefWidth="58.6666259765625" text="Position" />
+										<TableColumn fx:id="playersLevelColumn" prefWidth="75.0" text="Level" />
+										<TableColumn fx:id="playerRightLegColumn" prefWidth="88.33331298828125" text="Right Footed" />
+										<TableColumn fx:id="playersTeamColumn" prefWidth="93.33331298828125" text="Current Team" />
+										<TableColumn fx:id="playerValueColumn" maxWidth="182.66668701171875" minWidth="-1.0" prefWidth="53.0" text="Value" />
+										<TableColumn fx:id="playersBdayColumn" prefWidth="72.33331298828125" text="Birthdate" />
+										<TableColumn fx:id="playersWorkingDateColumn" maxWidth="130.0" minWidth="-1.0" prefWidth="128.0" text="Start Working Date" />
+										<TableColumn fx:id="playersAddressColumn" prefWidth="75.0" text="Address" />
+									</columns>
+									<BorderPane.margin>
+										<Insets />
+									</BorderPane.margin>
+								</TableView>
+							</center>
+							<bottom>
+								<HBox alignment="TOP_CENTER" spacing="15.0" BorderPane.alignment="TOP_CENTER">
+									<children>
+										<Button fx:id="addPlayerButton" mnemonicParsing="false" onAction="#addPlayer" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Add Player">
+											<HBox.margin>
+												<Insets />
+											</HBox.margin>
+										</Button>
+										<Button fx:id="updatePlayerButton" disable="true" mnemonicParsing="false" onAction="#updatePlayer" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Update player" />
+										<Button fx:id="removePlayerButton" disable="true" mnemonicParsing="false" onAction="#removePlayer" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Remove player">
+											<HBox.margin>
+												<Insets />
+											</HBox.margin>
+										</Button>
+									</children>
+									<BorderPane.margin>
+										<Insets top="15.0" />
+									</BorderPane.margin>
+								</HBox>
+							</bottom>
+							<padding>
+								<Insets bottom="5.0" left="15.0" right="15.0" top="10.0" />
+							</padding>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="generalQueriesTab" text="General Queries">
+					<content>
+						<VBox alignment="TOP_CENTER" spacing="15.0">
+							<children>
+								<Label fx:id="allSuperPlayerMaker" text="All Super Player Makers (All Teams)">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="316.0" prefWidth="580.0">
+									<content>
+										<TableView fx:id="playMakersTable">
+											<columns>
+												<TableColumn fx:id="idColumnPlayerMaker" prefWidth="34.666656494140625" text="ID" />
+												<TableColumn fx:id="firstNameColumnPlayerMaker" prefWidth="71.33334350585938" text="First Name" />
+												<TableColumn fx:id="playMakerLastNameColumn" prefWidth="77.33331298828125" text="Last Name" />
+												<TableColumn fx:id="playMakerPosColumn" prefWidth="69.0" text="Position" />
+												<TableColumn fx:id="playMakerLevelColumn" prefWidth="75.0" text="Level" />
+												<TableColumn fx:id="playMakerFootColumn" prefWidth="89.66668701171875" text="Right Footed" />
+												<TableColumn fx:id="teamColumnPlayerMaker" prefWidth="88.0" text="Current Team" />
+												<TableColumn fx:id="playMakerValueColumn" minWidth="0.0" prefWidth="56.0" text="Value" />
+												<TableColumn fx:id="playMakerBdayColumn" prefWidth="63.0" text="Birthdate" />
+												<TableColumn fx:id="playMakerWorkingDateColumn" prefWidth="129.0" text="Start Working Date" />
+												<TableColumn fx:id="playMakerAddressColumn" prefWidth="62.0" text="Address" />
+											</columns>
+										</TableView>
+									</content>
+								</ScrollPane>
+								<Separator>
+									<VBox.margin>
+										<Insets bottom="5.0" top="5.0" />
+									</VBox.margin>
+								</Separator>
+								<Label text="The Most Popular Position">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+									<VBox.margin>
+										<Insets />
+									</VBox.margin>
+								</Label>
+								<TextField fx:id="mosPopulerPotisionText" alignment="CENTER" editable="false" />
+							</children>
+							<opaqueInsets>
+								<Insets />
+							</opaqueInsets>
+							<padding>
+								<Insets bottom="5.0" left="15.0" right="15.0" top="10.0" />
+							</padding>
+						</VBox>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<top>
+		<HBox fx:id="pane" alignment="CENTER" prefHeight="25.0" prefWidth="586.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Back">
+					<graphic>
+						<ImageView fitHeight="15" fitWidth="15">
+							<Image url="@/resources/icon-back.png" />
+						</ImageView>
+					</graphic>
+					<opaqueInsets>
+						<Insets left="10.0" />
+					</opaqueInsets>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+				<Region prefHeight="25.0" prefWidth="438.0" HBox.hgrow="ALWAYS">
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+					<padding>
+						<Insets left="10.0" right="10.0" />
+					</padding>
+				</Region>
+				<Button fx:id="logoutButton" alignment="CENTER" mnemonicParsing="false" onAction="#logOut" onMouseEntered="#buttOnMouseEntered" onMouseExited="#buttOnMouseExited" text="Logout">
+					<graphic>
+						<ImageView fitHeight="10" fitWidth="10">
+							<image>
+								<Image url="@/resources/icon-sign-out.png" />
+							</image>
+						</ImageView>
+					</graphic>
+					<HBox.margin>
+						<Insets />
+					</HBox.margin>
+				</Button>
+			</children>
+			<BorderPane.margin>
+				<Insets bottom="10.0" left="15.0" right="15.0" top="5.0" />
+			</BorderPane.margin>
+		</HBox>
+	</top>
+	<padding>
+		<Insets bottom="10.0" top="10.0" />
+	</padding>
+</BorderPane>

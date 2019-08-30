@@ -1,0 +1,478 @@
+
+/********** Setting an image as the general background color **********/
+
+.root {
+	-fx-background-image: url("../resources/img-grass-texture.jpg");
+	-fx-background-size: cover;
+}
+
+
+/************************** Setting a general label **************************/
+
+.label {
+	-fx-text-fill: white;
+	-fx-effect: dropshadow(one-pass-box , black , 5 , 2.5 , 0 , 0 );
+}
+
+
+/************************** Setting general button design **************************/
+
+.button {
+	-fx-background-color: white;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+	-fx-border-color: black;
+	-fx-border-width: 1.25;
+	-fx-border-radius: 9;
+	-fx-effect: dropshadow(one-pass-box, black, 4, 0.0, 4, 0);
+}
+
+/* Manipulating button opacity when disable */
+
+.button:disabled {
+	-fx-opacity: 0.7;
+}
+
+
+/************************** Setting separator design **************************/
+
+/*.separator {
+	-fx-background-color: transparent;
+	-fx-border-style: solid;
+	-fx-border-color: white;
+	-fx-border-width: 0.5px;
+	-fx-border-radius: 100 100 100 100;
+}*/
+
+.separator .line {
+	/*-fx-background-color: linear-gradient(#bedaa2, #d5f5b6);*/
+	-fx-background-color: linear-gradient(to left,#4e9c11, #3e7711);
+	-fx-border-width: 0.5px;
+}
+
+
+/************************** Setting table design **************************/
+
+/* Canceling blue annoying lines */
+.table-view {
+	-fx-focus-traversable: false;
+}
+
+.table-view:focused {
+	-fx-focus-color: #252525;
+}
+
+/* Setting the header field label */
+.table-view .column-header .label {
+	-fx-effect: null;
+	-fx-text-fill: black;
+	-fx-background-color: transparent;
+}
+
+/* Setting the header field background */
+.table-view .column-header-background {
+	-fx-effect: null;
+	-fx-text-fill: black;
+	-fx-background-color: linear-gradient(#f1ffe9,#d2e6c2);
+	/*-fx-background-color: linear-gradient(lime, green);*/
+}
+
+/* Setting the header field background (in the left side, where there's no text) */
+.table-view .filler {
+	-fx-effect: null;
+	-fx-text-fill: black;
+	-fx-background-color: linear-gradient(#f1ffe9,#d2e6c2);
+	/*-fx-background-insets: 0, 0 0 0 0;*/
+	-fx-border-color: #9e9e9e;
+	-fx-border-width: 0.2px;
+}
+
+
+/* Setting a field label */
+.table-view .label {
+	-fx-effect: null;
+	-fx-text-fill: black;
+}
+
+/* Setting the column borders */
+.table-view .column-header {
+    -fx-background-color: transparent;
+	-fx-border-color: #9e9e9e;
+	-fx-border-width: 0.2px;
+}
+
+/* Setting background color when an item is selected */
+.table-row-cell:selected {
+	-fx-background-color: #252525; 
+	-fx-text-alignment: center;
+}
+
+/* Setting text color when an item is selected */
+.table-row-cell:selected .text {
+	-fx-fill: white;
+}
+
+/* Setting border color when an item is selected */
+.table-row-cell:selected .table-cell {
+	-fx-border-color: #9e9e9e;
+	-fx-border-width: 0.2px;
+}
+
+/* Setting arrow color */
+.table-view .arrow {  
+	-fx-mark-color: black;  
+}
+/* Setting header background color when an item is selected */
+.table-view .column-header-background:selected {
+	-fx-effect: null;
+	-fx-text-fill: black;
+	-fx-background-color: linear-gradient(#f1ffe9,#d2e6c2);
+
+}
+
+/*.table-column {
+  -fx-alignment: CENTER;
+}*/
+
+ /* trying to change drag table colours */
+
+.table-view > .column-header-background > .column-drag-header {
+	-fx-background-color: #dddddd;
+}
+
+.table-view > .column-header-background > .column-drag-header > .label {
+	-fx-text-fill: black;
+}
+
+.table-view > .column-header-background > .column-drag-header {
+    -fx-background-color: #9e9e9e;
+}
+
+.table-view > .column-resize-line {
+    -fx-background-color: #252525;
+}
+
+/*.table-view > .column-overlay {
+    -fx-background-color: #252525;
+}*/
+
+.table-row-cell:selected {
+	-fx-focus-color: #252525;
+}
+
+
+
+
+
+/************************** Setting tab design **************************/
+
+/* Setting tab pane header background and its opacity */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #000000;
+    -fx-opacity: 0.5;
+}
+
+.tab-pane {
+    -fx-tab-min-width:90px;
+}
+
+.tab {
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+
+/* Setting the tab (title) background */
+.tab-pane .tab {
+    /*-fx-background-color: #e6e6e6;*/
+	-fx-background-color: transparent;
+	-fx-opacity: 0.6;
+}
+
+/* Setting the selected tab attributes */
+.tab-pane .tab:selected { 
+    /*-fx-background-color: green;*/
+    -fx-opacity: 1;
+}
+
+.tab .tab-label { 
+	-fx-text-fill: white;
+	-fx-effect: dropshadow(one-pass-box , black , 4 , 0.5 , 0 , 0 );
+	-fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-font-size: 12px;
+}
+
+.tab:selected .tab-label { 
+    -fx-text-fill: white;
+	-fx-effect: dropshadow(one-pass-box , black , 4 , 0.5 , 0 , 0 );
+	-fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-font-size: 12px;
+}
+
+/* removing the annoying blue line */
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+/************************** Setting split-pane design ***************************/
+
+/* Setting the divider colour */
+.split-pane-divider {
+    /*-fx-background-color: linear-gradient(to left,#799F0C, #ACBB78);*/
+    -fx-background-color: linear-gradient(to left,#76b852, #97d276);
+    -fx-border-color: #9e9e9e;
+	-fx-border-width: 0.2px;
+}
+
+/************************** Setting accordion design **************************/
+
+.accordion {
+	-fx-backgroud-color: transparent;
+}
+
+.accordion .titled-pane {
+	-fx-text-fill: black;
+	-fx-background-color: #DDDDDD;
+}
+
+/* setting content background (what's inside when we click on a header) */
+.accordion .titled-pane > *.content {
+    -fx-background-color: #d2e6c2;
+}
+
+.accordion .titled-pane .title {
+    -fx-background-color: linear-gradient(#f1ffe9,#d2e6c2);
+    -fx-text-fill: black;
+}
+
+.accordion .titled-pane .title:hover {
+     -fx-background-color: white;
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+    /*-fx-background-color: -fx-mark-highlight-color, -fx-mark-color;*/
+    -fx-background-color: black;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.titled-pane:focused > .title > .arrow-button .arrow {
+	-fx-background-color: black;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em; /* 3 3.75 3 3.75 */
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+    -fx-focus-color: transparent;
+}
+
+/************************** Setting list-view design **************************/
+
+/* no annoying blue :D */
+.list-view {
+	-fx-focus-traversable: false;
+}
+
+.list-view:focused {
+	-fx-border-color: transparent;
+}
+
+
+.list-view .list-cell:selected {
+	-fx-background-color: #252525;
+	-fx-text-fill: white;
+}
+
+/************************** Setting combobox design **************************/
+
+.combo-box {
+	-fx-background-color: white;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+	-fx-border-color: black;
+	-fx-border-width: 1.25;
+	-fx-border-radius: 9;
+	-fx-effect: dropshadow(one-pass-box, black, 9, 0.0, 4, 0);
+}
+
+.combo-box-popup .list-view {
+	-fx-background-color: white;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+	-fx-border-color: black;
+	-fx-border-width: 1.25;
+	-fx-border-radius: 9;
+}
+
+.combo-box-popup .list-view .list-cell {
+	-fx-background-color: white;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+	-fx-background-color: black;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+	-fx-background-color: black;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: white;
+}
+
+.combo-box:disabled {
+	-fx-opacity: 0.7;
+}
+
+.combo-box .list-cell:disabled {
+	-fx-text-fill: black;
+}
+
+.combo-box .list-cell {
+	-fx-text-fill: black;
+}
+
+.combo-box-base > .arrow-button > .arrow {
+     -fx-background-color: black;
+     -fx-background-insets: 0 0 0 0;
+     -fx-padding: 2 4;
+     -fx-shape: "M 0 0 H 7 L 3.5 4 z";
+}
+
+/* .combo-box-base .list-cell:hover {
+	-fx-text-fill: white;
+	-fx-background-color: black;
+}*/
+
+.combo-box-base .list-cell {
+	-fx-background-color: white;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+}
+
+.combo-box-base:disabled .list-cell {
+	-fx-background-color: transparent;
+	-fx-background-radius: 9, 0, 0, 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;
+	-fx-opacity: 0.7;
+}
+
+.combo-box-base:hover .list-cell {
+	-fx-background-color: black;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: white;
+}
+
+.combo-box-base:hover > .arrow-button {
+	-fx-background-color: black;
+	-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 -15, 0, 0, 0;
+}
+
+.combo-box-base:disabled > .arrow-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0, 9, 9, 0;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-opacity: 0.7;
+}
+
+.combo-box-base:hover > .arrow-button > .arrow {
+     -fx-background-color: white;
+     -fx-background-insets: 0 0 0 0;
+     -fx-padding: 2 4;
+     /*-fx-shape: "M 0 0 H 7 L 3.5 4 z";*/
+}
+
+/*.combo-box-base .list-view {
+	-fx-background-color: white;
+	-fx-text-fill: black;
+}*/
+
+.combo-box-base:hover {
+	-fx-background-color: black;
+}
+
+/************************** Setting scroll pane design **************************/
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: black;
+}
+
+/* setting scroll bar */
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color: black;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to bottom,#61b61e, #447f15);
+    /*-fx-background-color: green;*/
+    -fx-background-radius: 5em;
+}
+
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to left,#61b61e, #447f15);
+    /*-fx-background-color: green;*/
+    -fx-background-radius: 5em;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+
+.scroll-bar:horizontal .thumb:hover{
+    -fx-background-color: linear-gradient(to bottom,#6bca21, #4e9218); 
+    -fx-background-radius: 5em;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: linear-gradient(to left,#6bca21, #4e9218); 
+    -fx-background-radius: 5em;
+}
+.scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: linear-gradient(to left,#6bca21, #4e9218);
+    -fx-background-radius: 5em;
+}
+
+.scroll-bar:horizontal .thumb:pressed {
+    -fx-background-color: linear-gradient(to bottom,#6bca21, #4e9218);
+    -fx-background-radius: 5em;
+}
+
+.scroll-bar > .increment-button > .increment-arrow:hover,
+.scroll-bar > .decrement-button > .decrement-arrow:hover {
+    -fx-background-color: linear-gradient(to left,#72d723, #6bca21);
+}
+
+.scroll-bar > .increment-button > .increment-arrow,
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-background-color: linear-gradient(to left,#61b61e, #447f15);
+}

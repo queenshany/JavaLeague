@@ -1,0 +1,283 @@
+
+/************************** Setting button design **************************/
+.button {
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+     -fx-background-color: white;
+     -fx-text-fill: black;
+}
+
+/************************** Setting date picker design **************************/
+.date-picker {
+	 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+	 -fx-border-color: white;
+	 /*-fx-background-color: white;*/
+	 -fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+}
+
+.date-picker .text-field {
+	-fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+	-fx-prompt-text-fill: black; /* not black */
+}
+
+.date-picker-popup > .month-year-pane > .spinner {
+     -fx-border-color: transparent;
+     -fx-effect: null;
+}
+
+.date-picker:hover {
+	/*-fx-background-color: black;
+	-fx-border-color: black;*/
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	-fx-border-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+}
+
+.date-picker .arrow-button:hover {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-border-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);*/
+}
+
+.date-picker .button {
+	-fx-background-color: transparent;
+	-fx-effect: null;
+	-fx-background-radius: 0;
+}
+
+.date-picker:hover > .arrow-button {
+	/*-fx-background-radius: px ;*/
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-border-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);*/
+	-fx-background-radius: 0;
+}
+
+.date-picker > .arrow-button {
+	/*-fx-background-radius: px ;*/
+	-fx-background-color: white;
+	/*-fx-border-color: white;*/
+	-fx-background-radius: 0;
+}
+
+.date-picker:hover .text-field {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	-fx-text-fill: black;
+	-fx-prompt-text-fill: black;
+	/*-fx-border-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);*/
+	/*-fx-background-radius: 0, 0, 0, 0;*/
+}
+
+.date-picker:disabled {
+	-fx-background-color: white;
+	-fx-opacity: 1;
+}
+
+.date-picker:disabled .text-field {
+	-fx-text-fill: black;
+}
+
+/************************** Setting combobox design **************************/
+
+.combo-box {
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+     -fx-background-color: white;
+     -fx-text-fill: black;
+}
+
+.combo-box-popup .list-view {
+	-fx-background-color: white;
+	/*-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+	/*-fx-border-color: black;
+	-fx-border-width: 1.25;
+	-fx-border-radius: 9;*/
+}
+
+.combo-box-popup .list-view .list-cell {
+	-fx-background-color: white;
+	/*-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-background-radius: 9; 
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+}
+
+.combo-box:disabled {
+	-fx-opacity: 0.7;
+}
+
+.combo-box:disabled .list-view .list-cell:filled {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-background-radius: 9; 
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+}
+
+.combo-box-base:disabled > .arrow-button {
+	-fx-background-color: white;
+}
+
+.combo-box:disabled > .arrow-button > .arrow {
+     -fx-background-color: black;
+     -fx-background-insets: 0 0 0 0;
+     /*-fx-shape: "M 0 0 H 7 L 3.5 4 z";*/
+}
+
+.combo-box .list-cell:disabled {
+	-fx-text-fill: black;
+}
+
+.combo-box .list-cell {
+	-fx-text-fill: black;
+}
+
+.combo-box-base > .arrow-button > .arrow {
+     -fx-background-color: black;
+     -fx-background-insets: 0 0 0 0;
+     /*-fx-shape: "M 0 0 H 7 L 3.5 4 z";*/
+}
+
+/*.combo-box-base .list-cell:hover {
+	-fx-text-fill: white;
+	-fx-background-color: black;
+}*/
+
+.combo-box-base .list-cell {
+	-fx-background-color: white;
+	/*-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-text-fill: black;*/
+}
+
+.combo-box-base:disabled .list-cell {
+	-fx-background-color: transparent;
+	/*-fx-background-radius: 9, 0, 0, 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+	-fx-opacity: 0.7;
+}
+
+.combo-box-base:hover .list-cell {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-text-fill: black;
+}
+
+.combo-box-base:hover > .arrow-button {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+	/*-fx-background-radius: 9;
+	-fx-background-insets: 0 0 0 -15, 0, 0, 0;*/
+}
+
+.combo-box-base:disabled > .arrow-button {
+	-fx-background-color: transparent;
+	/*-fx-background-radius: 0, 9, 9, 0;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;*/
+	-fx-opacity: 0.7;
+}
+
+.combo-box-base:hover > .arrow-button > .arrow {
+     -fx-background-color: black;
+     -fx-background-insets: 0 0 0 0;
+     /*-fx-shape: "M 0 0 H 7 L 3.5 4 z";*/
+}
+
+/*.combo-box-base .list-view {
+	-fx-background-color: white;
+	-fx-text-fill: black;
+}*/
+
+.combo-box:hover {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+}
+	
+/************************** Setting spinner design **************************/
+
+.spinner {
+	-fx-border-color: white;
+	-fx-border-radius: 3;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.spinner .text-field {
+	-fx-border-color: white;
+	-fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+	
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+	 /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
+	 -fx-effect: null;
+     -fx-background-color: white;
+}
+
+.spinner .increment-arrow-button .increment-arrow,
+.spinner .decrement-arrow-button .decrement-arrow {
+	-fx-background-color: black;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+	-fx-background-color:radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+}
+
+.spinner .increment-arrow-button:hover .increment-arrow,
+.spinner .decrement-arrow-button:hover .decrement-arrow {
+	-fx-background-color: black;
+}
+
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #c9c9c9);
+}
+
+.spinner .increment-arrow-button:pressed .increment-arrow,
+.spinner .decrement-arrow-button:pressed .decrement-arrow {
+	-fx-background-color: black;
+}
+
+
+
+.check-box .box {
+	-fx-background-color: white;
+	-fx-border-color: transparent;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 4, 0.0 , 0 , 0 );
+}
+
+.check-box:selected .mark {
+	-fx-background-color: black;
+}
+
+.check-box:selected .box {
+	/*-fx-background-color: #339900; /*#33CC00;*/
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #bfbfbf);
+}
+
+.check-box:hover .box {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+}
+
+.check-box:hover .mark {
+	-fx-background-color: black;
+}
+
+.check-box:selected:hover .box {
+	-fx-background-color: radial-gradient(center 50% 0%, radius 100%, white, #DDDDDD);
+}
+
+.check-box:selected:hover .mark {
+	-fx-background-color: black;
+}
+
